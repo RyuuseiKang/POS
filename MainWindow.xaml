@@ -284,7 +284,6 @@
             <BeginStoryboard x:Name="couponDown_MouseLeave_BeginStoryboard" Storyboard="{StaticResource couponDown_MouseLeave}"/>
             <BeginStoryboard x:Name="couponUp_MouseOver_BeginStoryboard" Storyboard="{StaticResource couponUp_MouseOver}"/>
             <BeginStoryboard x:Name="couponUp_MouseLeave_BeginStoryboard" Storyboard="{StaticResource couponUp_MouseLeave}"/>
-            <BeginStoryboard x:Name="kaikei_MouseUp_BeginStoryboard" Storyboard="{StaticResource kaikei_MouseUp}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="kaikeiRect">
             <BeginStoryboard x:Name="keikai_MouseOver_BeginStoryboard1" Storyboard="{StaticResource keikai_MouseOver}"/>
@@ -315,9 +314,6 @@
         </EventTrigger>
         <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="couponDownRect">
         	<BeginStoryboard x:Name="couponDown_MouseLeave_BeginStoryboard1" Storyboard="{StaticResource couponDown_MouseLeave}"/>
-        </EventTrigger>
-        <EventTrigger RoutedEvent="Mouse.MouseUp" SourceName="kaikeiRect">
-        	<BeginStoryboard x:Name="kaikei_MouseUp_BeginStoryboard1" Storyboard="{StaticResource kaikei_MouseUp}"/>
         </EventTrigger>
     </Window.Triggers>
     <Grid x:Name="MainGrid">

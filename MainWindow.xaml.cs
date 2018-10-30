@@ -134,6 +134,9 @@ namespace POS
 
         private void kaikeiRect_MouseUp(object sender, MouseButtonEventArgs e) {
             if(sum != 0) {
+                System.Windows.Media.Animation.Storyboard storyBoard = (System.Windows.Media.Animation.Storyboard)FindResource("kaikei_MouseUp");
+                BeginStoryboard(storyBoard);
+
                 SaveReceipt();
                 Init();
             }
