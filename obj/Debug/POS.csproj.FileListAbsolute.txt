@@ -1,0 +1,66 @@
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\bin\Debug\POS.exe.config
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\bin\Debug\POS.exe
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\bin\Debug\POS.pdb
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\MainWindow.baml
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\MainWindow.g.cs
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\App.g.cs
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\POS_MarkupCompile.cache
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\POS.g.resources
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\POS.Properties.Resources.resources
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\POS.exe
+c:\users\sau\documents\visual studio 2013\Projects\POS\POS\obj\Debug\POS.pdb
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\bin\Debug\POS.exe.config
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\bin\Debug\POS.exe
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\bin\Debug\POS.pdb
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\MainWindow.baml
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\MainWindow.g.cs
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\App.g.cs
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\POS_MarkupCompile.cache
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\POS.g.resources
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\POS.Properties.Resources.resources
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\POS.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\POS.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\POS.exe
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\POS.pdb
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\Item.g.cs
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\POS_MarkupCompile.lref
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\Item.baml
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\POS.csprojAssemblyReference.cache
+C:\Users\seto_\Desktop\POS\POS\POS\bin\Debug\POS.exe.config
+C:\Users\seto_\Desktop\POS\POS\POS\bin\Debug\POS.exe
+C:\Users\seto_\Desktop\POS\POS\POS\bin\Debug\POS.pdb
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\POS.csprojAssemblyReference.cache
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\Item.g.cs
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\MainWindow.g.cs
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\App.g.cs
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\POS_MarkupCompile.cache
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\POS_MarkupCompile.lref
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\Item.baml
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\MainWindow.baml
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\POS.g.resources
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\POS.Properties.Resources.resources
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\POS.csproj.GenerateResource.cache
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\POS.csproj.CoreCompileInputs.cache
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\POS.exe
+C:\Users\seto_\Desktop\POS\POS\POS\obj\Debug\POS.pdb
+\\Mac\Home\Desktop\Development\Visual Studio Project\POS\POS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\SAU\Desktop\POS\POS\POS\bin\Debug\POS.exe.config
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\POS.exe
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\POS.pdb
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\Item.g.cs
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\MainWindow.g.cs
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\App.g.cs
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\POS_MarkupCompile.cache
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\POS_MarkupCompile.lref
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\SAU\Desktop\POS\POS\POS\bin\Debug\POS.exe
+C:\Users\SAU\Desktop\POS\POS\POS\bin\Debug\POS.pdb
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\Item.baml
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\MainWindow.baml
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\POS.g.resources
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\POS.Properties.Resources.resources
+C:\Users\SAU\Desktop\POS\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache

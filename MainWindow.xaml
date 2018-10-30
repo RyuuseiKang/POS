@@ -1,0 +1,484 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:POS" x:Name="MWindow" mc:Ignorable="d" x:Class="POS.MainWindow"
+        Title="POS" Height="600" Width="800" WindowStartupLocation="Manual" AllowsTransparency="True" WindowStyle="None" Topmost="True" ResizeMode="CanResizeWithGrip" Background="White" Initialized="Window_Initialized">
+    <Window.Resources>
+        <Storyboard x:Key="kenkinOn">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="kenkin_Back">
+                <EasingColorKeyFrame KeyTime="0" Value="{Binding Fill.Color, ElementName=kenkin_Back}">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+                <EasingColorKeyFrame x:Name="easingColorKeyFrame" KeyTime="0:0:0.3" Value="#FF5EC5AA">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="soukin_Back">
+                <EasingColorKeyFrame KeyTime="0" Value="{Binding Fill.Color, ElementName=soukin_Back}">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF4D4E6A">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="soukinOn">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="kenkin_Back">
+                <EasingColorKeyFrame KeyTime="0" Value="{Binding Fill.Color, ElementName=kenkin_Back}">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF4D4E6A">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="soukin_Back">
+                <EasingColorKeyFrame KeyTime="0" Value="{Binding Fill.Color, ElementName=soukin_Back}">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF5EC5AA">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="allOff">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="kenkin_Back">
+                <EasingColorKeyFrame KeyTime="0" Value="{Binding Fill.Color, ElementName=kenkin_Back}">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF4D4E6A">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="soukin_Back">
+                <EasingColorKeyFrame KeyTime="0" Value="{Binding Fill.Color, ElementName=soukin_Back}">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF4D4E6A">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="hideCouponCount">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="couponApplyGrid">
+                <EasingThicknessKeyFrame KeyTime="0" Value="{Binding ElementName=couponApplyGrid, Path=Margin}">
+                    <EasingThicknessKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingThicknessKeyFrame.EasingFunction>
+                </EasingThicknessKeyFrame>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.3" Value="0,60,0,0">
+                    <EasingThicknessKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingThicknessKeyFrame.EasingFunction>
+                </EasingThicknessKeyFrame>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CouponUp">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="couponApplyGrid">
+                <EasingThicknessKeyFrame KeyTime="0" Value="{Binding ElementName=couponApplyGrid, Path=Margin}">
+                    <EasingThicknessKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingThicknessKeyFrame.EasingFunction>
+                </EasingThicknessKeyFrame>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingThicknessKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingThicknessKeyFrame.EasingFunction>
+                </EasingThicknessKeyFrame>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CouponDown"/>
+        <Storyboard x:Key="keikai_MouseOver">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="kaikeiRect_MouseOver">
+                <EasingDoubleKeyFrame KeyTime="0" Value="{Binding ElementName=kaikeiRect_MouseOver, Path=Opacity}">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.2">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="keikai_MouseLeave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="kaikeiRect_MouseOver">
+                <EasingDoubleKeyFrame KeyTime="0" Value="{Binding ElementName=kaikeiRect_MouseOver, Path=Opacity}"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="kenkin_MouseOver">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="kenkinRect_MouseOver">
+                <EasingDoubleKeyFrame KeyTime="0" Value="{Binding ElementName=kenkinRect_MouseOver, Path=Opacity}">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.2">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="kenkin_MouseLeave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="kenkinRect_MouseOver">
+                <EasingDoubleKeyFrame KeyTime="0" Value="{Binding ElementName=kenkinRect_MouseOver, Path=Opacity}">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="soukin_MouseOver">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="soukinRect_MouseOver">
+                <EasingDoubleKeyFrame KeyTime="0" Value="{Binding Opacity, ElementName=soukinRect_MouseOver}">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.2">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="soukin_MouseLeave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="soukinRect_MouseOver">
+                <EasingDoubleKeyFrame KeyTime="0" Value="{Binding Opacity, ElementName=soukinRect_MouseOver}">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="couponDown_MouseOver">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="couponDownRect_MouseOver">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="{Binding Opacity, ElementName=couponDownRect_MouseOver}">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.2">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="couponDown_MouseLeave">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="couponDownRect_MouseOver">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="{Binding Opacity, ElementName=couponDownRect_MouseOver}">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="couponUp_MouseOver">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="couponUpRect_MouseOver">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="{Binding Opacity, ElementName=couponUpRect_MouseOver}">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.2">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="couponUp_MouseLeave">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="couponUpRect_MouseOver">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="{Binding Opacity, ElementName=couponUpRect_MouseOver}">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="kaikei_MouseUp">
+        	<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="kaikeiRect_Back">
+        		<EasingColorKeyFrame KeyTime="0" Value="#FFF5DE88">
+        			<EasingColorKeyFrame.EasingFunction>
+        				<QuarticEase EasingMode="EaseInOut"/>
+        			</EasingColorKeyFrame.EasingFunction>
+        		</EasingColorKeyFrame>
+        		<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF5EC5AA">
+        			<EasingColorKeyFrame.EasingFunction>
+        				<QuarticEase EasingMode="EaseInOut"/>
+        			</EasingColorKeyFrame.EasingFunction>
+        		</EasingColorKeyFrame>
+        		<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF5EC5AA">
+        			<EasingColorKeyFrame.EasingFunction>
+        				<QuarticEase EasingMode="EaseInOut"/>
+        			</EasingColorKeyFrame.EasingFunction>
+        		</EasingColorKeyFrame>
+        		<EasingColorKeyFrame KeyTime="0:0:1.3" Value="#FFF5DE88">
+        			<EasingColorKeyFrame.EasingFunction>
+        				<QuarticEase EasingMode="EaseInOut"/>
+        			</EasingColorKeyFrame.EasingFunction>
+        		</EasingColorKeyFrame>
+        	</ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard x:Name="kenkinOn_BeginStoryboard" Storyboard="{StaticResource kenkinOn}"/>
+            <BeginStoryboard x:Name="soukinOn_BeginStoryboard" Storyboard="{StaticResource soukinOn}"/>
+            <BeginStoryboard x:Name="allOff_BeginStoryboard" Storyboard="{StaticResource allOff}"/>
+            <BeginStoryboard Storyboard="{StaticResource hideCouponCount}"/>
+            <BeginStoryboard Storyboard="{StaticResource CouponUp}"/>
+            <BeginStoryboard Storyboard="{StaticResource CouponDown}"/>
+            <BeginStoryboard x:Name="kenkin_MouseOver_BeginStoryboard" Storyboard="{StaticResource kenkin_MouseOver}"/>
+            <BeginStoryboard x:Name="kenkin_MouseLeave_BeginStoryboard" Storyboard="{StaticResource kenkin_MouseLeave}"/>
+            <BeginStoryboard x:Name="soukin_MouseOver_BeginStoryboard" Storyboard="{StaticResource soukin_MouseOver}"/>
+            <BeginStoryboard x:Name="soukin_MouseLeave_BeginStoryboard" Storyboard="{StaticResource soukin_MouseLeave}"/>
+            <BeginStoryboard x:Name="couponDown_MouseOver_BeginStoryboard" Storyboard="{StaticResource couponDown_MouseOver}"/>
+            <BeginStoryboard x:Name="couponDown_MouseLeave_BeginStoryboard" Storyboard="{StaticResource couponDown_MouseLeave}"/>
+            <BeginStoryboard x:Name="couponUp_MouseOver_BeginStoryboard" Storyboard="{StaticResource couponUp_MouseOver}"/>
+            <BeginStoryboard x:Name="couponUp_MouseLeave_BeginStoryboard" Storyboard="{StaticResource couponUp_MouseLeave}"/>
+            <BeginStoryboard x:Name="kaikei_MouseUp_BeginStoryboard" Storyboard="{StaticResource kaikei_MouseUp}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="kaikeiRect">
+            <BeginStoryboard x:Name="keikai_MouseOver_BeginStoryboard1" Storyboard="{StaticResource keikai_MouseOver}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="kaikeiRect">
+            <BeginStoryboard x:Name="keikai_MouseLeave_BeginStoryboard1" Storyboard="{StaticResource keikai_MouseLeave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="kenkinRect">
+            <BeginStoryboard x:Name="kenkin_MouseOver_BeginStoryboard1" Storyboard="{StaticResource kenkin_MouseOver}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="kenkinRect">
+            <BeginStoryboard x:Name="kenkin_MouseLeave_BeginStoryboard1" Storyboard="{StaticResource kenkin_MouseLeave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="soukinRect">
+            <BeginStoryboard x:Name="soukin_MouseOver_BeginStoryboard1" Storyboard="{StaticResource soukin_MouseOver}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="soukinRect">
+            <BeginStoryboard x:Name="soukin_MouseLeave_BeginStoryboard1" Storyboard="{StaticResource soukin_MouseLeave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="couponUpRect">
+        	<BeginStoryboard x:Name="couponUp_MouseOver_BeginStoryboard1" Storyboard="{StaticResource couponUp_MouseOver}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="couponUpRect">
+        	<BeginStoryboard x:Name="couponUp_MouseLeave_BeginStoryboard1" Storyboard="{StaticResource couponUp_MouseLeave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="couponDownRect">
+        	<BeginStoryboard x:Name="couponDown_MouseOver_BeginStoryboard1" Storyboard="{StaticResource couponDown_MouseOver}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="couponDownRect">
+        	<BeginStoryboard x:Name="couponDown_MouseLeave_BeginStoryboard1" Storyboard="{StaticResource couponDown_MouseLeave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseUp" SourceName="kaikeiRect">
+        	<BeginStoryboard x:Name="kaikei_MouseUp_BeginStoryboard1" Storyboard="{StaticResource kaikei_MouseUp}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF495384" Offset="0"/>
+                <GradientStop Color="#FF73446E" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid x:Name="priceGrid" Margin="30,30,30,0" Height="110" VerticalAlignment="Top">
+            <Rectangle x:Name="priceRect_Back" StrokeThickness="0" RadiusY="3" RadiusX="3" Fill="#B25AC6CE">
+                <Rectangle.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="20" Opacity="0.2"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle x:Name="priceRect_BackImage" StrokeThickness="0" RadiusY="3" RadiusX="3" HorizontalAlignment="Left" Width="740" MouseDown="priceRect_BackImage_MouseDown">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="won.png" Stretch="Uniform" Opacity="0.5">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="2" ScaleY="2"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform X="-0.36" Y="0.17"/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Rectangle.Fill>
+                <Rectangle.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="20" Opacity="0.2"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock x:Name="kakakuText" Margin="120,0,20,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="110" TextAlignment="Right" FontSize="72" FontWeight="Bold" FontFamily="/;component/Resource/#Noto Sans CJK KR Black" Foreground="White">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="20" Opacity="0.2"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid x:Name="keikaiGrid" Margin="0,0,30,30" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150">
+
+            <Rectangle x:Name="kaikeiRect_Back" Fill="#FFF5DE88" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="20" Opacity="0.2" ShadowDepth="0"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle x:Name="kaikeiRect_MouseOver" Fill="White" StrokeThickness="0" RadiusX="3" RadiusY="3" Opacity="0"/>
+            <Rectangle x:Name="kaikeiRect_ImageBack" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pay.png" Stretch="Uniform" Opacity="0.3">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="1.4" ScaleX="1.4"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform X="0.38" Y="0.25"/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock x:Name="kaikeiText" HorizontalAlignment="Right" Margin="0,0,0,11" TextWrapping="Wrap" Text="결제" VerticalAlignment="Bottom" Width="150" FontSize="20" TextAlignment="Center" FontFamily="/;component/Resource/#Noto Sans CJK KR Bold"/>
+            <Rectangle x:Name="kaikeiRect" Fill="#00F5DE88" Height="50" VerticalAlignment="Bottom" StrokeThickness="0" RadiusX="3" RadiusY="3" MouseUp="kaikeiRect_MouseUp"/>
+        </Grid>
+        <Grid x:Name="kenkinGrid" Margin="30,0,0,30" HorizontalAlignment="Left" Width="150" Height="50" VerticalAlignment="Bottom">
+
+            <Rectangle x:Name="kenkin_Back" Fill="#FF4D4E6A" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="20" Opacity="0.2" ShadowDepth="0"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle x:Name="kenkinRect_MouseOver" Fill="White" StrokeThickness="0" RadiusX="3" RadiusY="3" Opacity="0"/>
+            <Rectangle x:Name="kenkinRect_ImageBack" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="money.png" Stretch="Uniform" Opacity="0.2">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="1.1" ScaleX="1.1"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform X="0.33" Y="0.29"/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock x:Name="kenkinText" HorizontalAlignment="Right" Margin="0,0,0,11" TextWrapping="Wrap" Text="현금" VerticalAlignment="Bottom" Width="150" FontSize="20" TextAlignment="Center" FontFamily="/;component/Resource/#Noto Sans CJK KR Bold" Foreground="White"/>
+            <Rectangle x:Name="kenkinRect" Fill="#00F5DE88" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3" MouseUp="kenkinRect_MouseUp"/>
+        </Grid>
+        <Grid x:Name="soukinGrid" Margin="199,0,0,30" HorizontalAlignment="Left" Width="150" Height="50" VerticalAlignment="Bottom">
+
+            <Rectangle x:Name="soukin_Back" Fill="#FF4D4E6A" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="20" Opacity="0.2" ShadowDepth="0"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle x:Name="soukinRect_MouseOver" Fill="White" StrokeThickness="0" RadiusX="3" RadiusY="3" Opacity="0"/>
+            <Rectangle x:Name="soukinRect_ImageBack" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="card.png" Stretch="Uniform" Opacity="0.2">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="1.1" ScaleX="1.1"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform X="0.42" Y="0.32"/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock x:Name="soukinText" HorizontalAlignment="Right" Margin="0,0,0,11" TextWrapping="Wrap" Text="계좌 이체" VerticalAlignment="Bottom" Width="150" FontSize="20" TextAlignment="Center" FontFamily="/;component/Resource/#Noto Sans CJK KR Bold" Foreground="White"/>
+            <Rectangle x:Name="soukinRect" Fill="#00F5DE88" HorizontalAlignment="Right" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3" Height="50" VerticalAlignment="Bottom" MouseUp="soukinRect_MouseUp"/>
+        </Grid>
+        <Grid x:Name="couponGrid" Margin="368,0,0,30" HorizontalAlignment="Left" Width="150" Height="110" VerticalAlignment="Bottom">
+            <Grid x:Name="couponApplyGrid" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+
+                <Rectangle x:Name="couponApply_Back" Fill="#FF333333" StrokeThickness="0" RadiusX="3" RadiusY="3">
+                    <Rectangle.Effect>
+                        <DropShadowEffect BlurRadius="20" Opacity="0.1" ShadowDepth="0"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <TextBlock x:Name="couponCountText" HorizontalAlignment="Right" Margin="0,15,0,0" TextWrapping="Wrap" Text="0개 적용됨" VerticalAlignment="Top" Width="150" FontSize="20" TextAlignment="Center" FontFamily="/;component/Resource/#Noto Sans CJK KR Bold" Foreground="White" Height="30"/>
+            </Grid>
+            <Rectangle x:Name="coupon_Back" Fill="#FF4D4E6A" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="20" Opacity="0.2" ShadowDepth="0"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle x:Name="couponUpRect_MouseOver" Height="50" VerticalAlignment="Bottom" StrokeThickness="0" RadiusX="3" RadiusY="3" Margin="75,0,0,0" Fill="White" Opacity="0"/>
+            <Rectangle x:Name="couponDownRect_MouseOver" Height="50" VerticalAlignment="Bottom" StrokeThickness="0" RadiusX="3" RadiusY="3" Margin="0,0,75,0" Fill="White" Opacity="0"/>
+            <Rectangle x:Name="couponRect_ImageBack" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="150" StrokeThickness="0" RadiusX="3" RadiusY="3">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="coupon.png" Stretch="Uniform" Opacity="0.2">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="1.1" ScaleX="1.1"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform X="0.36" Y="0.21"/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock x:Name="couponText" HorizontalAlignment="Right" Margin="0,0,0,11" TextWrapping="Wrap" Text="쿠폰" VerticalAlignment="Bottom" Width="150" FontSize="20" TextAlignment="Center" FontFamily="/;component/Resource/#Noto Sans CJK KR Bold" Foreground="White"/>
+            <Rectangle x:Name="couponUpRect" Height="50" VerticalAlignment="Bottom" StrokeThickness="0" Margin="75,0,0,0" Fill="#00000000" MouseUp="couponUpRect_MouseUp"/>
+            <Rectangle x:Name="couponDownRect" Height="50" VerticalAlignment="Bottom" StrokeThickness="0" Margin="0,0,75,0" Fill="#00000000" MouseUp="couponDownRect_MouseUp"/>
+        </Grid>
+
+
+        <local:Item x:Name="item0" HorizontalAlignment="Left" Height="220" Margin="30,165,0,0" VerticalAlignment="Top" Width="190" ItemName="소시지" ImageUrl="sausage.jpg" ItemPrice="1500" CountChanged="item0_CountChanged"/>
+        <local:Item x:Name="item1" HorizontalAlignment="Left" Height="220" Margin="255,165,0,0" VerticalAlignment="Top" Width="190" ItemName="와플" ImageUrl="waffle.jpg" ItemPrice="2000" CountChanged="item1_CountChanged"/>
+        <local:Item x:Name="item2" HorizontalAlignment="Left" Height="220" Margin="485,165,0,0" VerticalAlignment="Top" Width="190" ItemName="바나나누텔라와플" ImageUrl="bananaWaffle.jpg" ItemPrice="3000" CountChanged="item2_CountChanged"/>
+
+    </Grid>
+</Window>
